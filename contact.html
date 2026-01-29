@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Dhiraj Pal</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #000007, #0a0a2a);
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* ---------- NAVBAR ---------- */
+        nav {
+            background-color: #101036;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 60px;
+            height: 90px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .left {
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #29f3b6;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin-left: 35px;
+            font-size: 1rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #29f3b6;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: white;
+        }
+
+        /* ---------- CONTACT SECTION ---------- */
+        .contact-box {
+            background: #11113a;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(41, 243, 182, 0.2);
+        }
+
+        .form-control {
+            background-color: #1c1c4d;
+            border: none;
+            color: white;
+        }
+
+        .form-control:focus {
+            background-color: #1c1c4d;
+            color: white;
+            box-shadow: 0 0 10px #29f3b6;
+        }
+
+        .btn-custom {
+            background-color: #29f3b6;
+            color: black;
+            font-weight: bold;
+        }
+
+        .btn-custom:hover {
+            background-color: #1ad19b;
+        }
+
+        /* ---------- FOOTER ---------- */
+        .footer {
+            background-color: #101036;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+            border-top: 2px solid #29f3b6;
+        }
+
+        .footer h2 {
+            color: #29f3b6;
+        }
+
+        .footer p {
+            color: #ccc;
+        }
+
+        .socials a {
+            color: white;
+            margin: 0 12px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .socials a:hover {
+            color: #29f3b6;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <nav>
+         <div class="left"><a href="index.html" style="color:#29f3b6;">DHIRAJ</a></div>
+        <div class="right">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+                <li><a href="image/CV _DHIRAJ PAL .pdf" download style="color:#29f3b6;">Download CV</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- CONTACT SECTION -->
+<section class="container my-5">
+    <div class="text-center mb-4">
+        <h1 class="fw-bold">Contact Me</h1>
+        <p class="text-secondary">Let's build something amazing together 🚀</p>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8 contact-box">
+            <form id="contactForm">
+                <div class="mb-3">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Message</label>
+                    <textarea class="form-control" rows="4" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-custom w-100">Send Message</button>
+            </form>
+
+            <hr class="my-4">
+
+            <p><strong>Email:</strong> palmdhiraj91@gmail.com</p>
+            <p><strong>Location:</strong> Mumbai, India</p>
+            <p><strong>Role:</strong> Python & Django Developer | Web Developer | Full Stack Developer</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <h2>Dhiraj Pal</h2>
+    <p>Python & Django Developer | Building Smart Web Solutions</p>
+
+    <div class="socials">
+        <a href="https://www.linkedin.com/in/dhiraj-pal-344789370?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a>
+        <a href="https://github.com/Dhiru9136">GitHub</a>
+      
+    </div>
+
+    <p>© 2026 Dhiraj Pal | All Rights Reserved</p>
+</footer>
+
+<!-- JS -->
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Thank you! Your message has been sent.");
+    this.reset();
+});
+</script>
+
+</body>
+</html>

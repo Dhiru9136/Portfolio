@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dhiraj | Python Developer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #000007, #0a0a2a);
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* ---------- NAVBAR ---------- */
+        nav {
+            background-color: #101036;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 60px;
+            height: 90px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .left {
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #29f3b6;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin-left: 35px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.3s ease;
+        }
+
+        nav ul li:hover {
+            color: #29f3b6;
+            transform: translateY(-2px);
+        }
+
+        /* ---------- HERO SECTION ---------- */
+        .firstSection {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 80px 10%;
+            min-height: 80vh;
+            position: relative; /* important */
+        }
+
+        .leftSection {
+            font-size: 2.8rem;
+            line-height: 1.4;
+            max-width: 600px;
+        }
+
+        .leftSection div {
+            font-size: 1.2rem;
+            margin-top: 15px;
+            color: #ccc;
+        }
+
+        .purple {
+            color: #29f3b6;
+            font-weight: bold;
+        }
+
+        /* ---------- PROFILE IMAGE TOP RIGHT ---------- */
+        .rightSection {
+            position: absolute;
+            top: 120px;
+            right: 100px;
+        }
+
+        .profile-img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #29f3b6;
+            box-shadow: 0 0 25px rgba(41, 243, 182, 0.5);
+            transition: 0.4s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 900px) {
+            .firstSection {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .rightSection {
+                position: static;
+                margin-top: 40px;
+            }
+
+            nav {
+                padding: 0 20px;
+            }
+
+            nav ul li {
+                margin-left: 20px;
+            }
+        }
+        /* ---------- FOOTER ---------- */
+.footer {
+    background-color: #101036;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 60px;
+    border-top: 2px solid #29f3b6;
+}
+
+.footer h2 {
+    color: #29f3b6;
+    margin-bottom: 10px;
+}
+
+.footer p {
+    color: #ccc;
+    margin: 8px 0;
+}
+
+.socials {
+    margin: 15px 0;
+}
+
+.socials a {
+    color: white;
+    margin: 0 12px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    color: #29f3b6;
+}
+
+copyright {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left"><a href="index.html" style="color:#29f3b6;">DHIRAJ</a></div>
+            <div class="right">
+                <ul>
+                    
+                    <li style="color:#29f3b6;">Home</a></li>
+                    <li><a href="about.html" style="color:#29f3b6;">About</a></li>
+                    <li><a href="project.html" style="color:#29f3b6;">Project</a></li>
+                    <li><a href="contact.html" style="color:#29f3b6;">Contact Me</a></li>
+                    <li><a href="image/CV _DHIRAJ PAL .pdf" download style="color:#29f3b6;">Download CV</a></li>
+                   
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="firstSection">
+            <div class="leftSection">
+                Hi, I'm <span class="purple">Dhiraj Pal</span>
+                <div>Python & Django Developer | Web Developer</div>
+            </div>
+
+            <div class="rightSection">
+                <img src="image/Dhiraj.png" alt="Dhiraj" class="profile-img">
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+    <div class="footer-container">
+        <h2>Dhiraj Pal</h2>
+        <p>Python & Django Developer | Web Developer</p>
+
+        <div class="socials">
+        <a href="https://www.linkedin.com/in/dhiraj-pal-344789370?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a>
+        <a href="https://github.com/Dhiru9136">GitHub</a>
+      
+    </div>
+
+        <p class="copyright">
+            © 2026 Dhiraj Pal. All Rights Reserved.
+        </p>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Projects | Dhiraj Pal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        body {
+            background: linear-gradient(135deg, #000007, #0a0a2a);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* NAVBAR */
+        nav {
+            background-color: #101036;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 60px;
+            height: 90px;
+        }
+
+        .left {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #29f3b6;
+        }
+
+        nav ul { display:flex; }
+        nav ul li { list-style:none; margin-left:35px; }
+
+        nav ul li a {
+            text-decoration:none;
+            color:white;
+            transition:0.3s;
+        }
+        nav ul li a:hover { color:#29f3b6; }
+
+        /* PROJECT SECTION */
+        .projects { padding:80px 10%; }
+
+        .projects h1 {
+            text-align:center;
+            margin-bottom:50px;
+            font-size:2.8rem;
+            color:#29f3b6;
+        }
+
+        .project-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+            gap:30px;
+        }
+
+        .project-card {
+            background:#12124a;
+            padding:25px;
+            border-radius:12px;
+            box-shadow:0 0 15px rgba(41,243,182,0.2);
+            transition:0.3s ease;
+        }
+
+        .project-card:hover {
+            transform:translateY(-8px);
+            box-shadow:0 0 25px rgba(41,243,182,0.4);
+        }
+
+        .project-card h3 { color:#29f3b6; margin-bottom:10px; }
+        .project-card p { color:#ccc; font-size:0.95rem; margin-bottom:15px; }
+
+        .project-card a {
+            text-decoration:none;
+            background:#29f3b6;
+            color:black;
+            padding:8px 15px;
+            border-radius:6px;
+            font-weight:bold;
+        }
+
+        /* COMPANY PROJECT */
+        .company-section {
+            padding:80px 10%;
+            background:#0a0a2a;
+        }
+
+        .company-card {
+            background:#11113a;
+            padding:40px;
+            border-radius:15px;
+            box-shadow:0 0 20px rgba(41,243,182,0.2);
+        }
+
+        .company-card h2 { color:#29f3b6; margin-bottom:15px; }
+
+        .company-card ul { margin-top:15px; color:#ccc; }
+
+        /* FOOTER */
+        .footer {
+            background-color:#101036;
+            padding:40px 20px;
+            text-align:center;
+            margin-top:60px;
+            border-top:2px solid #29f3b6;
+        }
+
+        .socials a {
+            color:white;
+            margin:0 12px;
+            text-decoration:none;
+        }
+        .socials a:hover { color:#29f3b6; }
+        
+
+        @media(max-width:900px){ nav{padding:0 20px;} }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+         <div class="left"><a href="index.html" style="color:#29f3b6;">DHIRAJ</a></div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html" style="color:#29f3b6;">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="image/CV _DHIRAJ PAL .pdf" download style="color:#29f3b6;">Download CV</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="projects">
+    <h1>My Projects</h1>
+
+    <div class="project-grid">
+        <div class="project-card">
+            <h3>🛒 Shopping Web App</h3>
+            <p>Django-based eCommerce site with cart, orders, authentication, and admin panel.</p>
+            <a href="#">View Project</a>
+        </div>
+
+        <div class="project-card">
+            <h3>📋 To-Do List App</h3>
+            <p>Task management system built using Python & Django with CRUD functionality.</p>
+            <a href="#">View Project</a>
+        </div>
+
+        <div class="project-card">
+            <h3>🌍 Portfolio Website</h3>
+            <p>Responsive personal portfolio built using HTML, CSS & JavaScript.</p>
+            <a href="#">View Project</a>
+        </div>
+    </div>
+</section>
+
+<!-- COMPANY PROJECT -->
+<section class="company-section">
+    <h1 style="text-align:center; color:#29f3b6; margin-bottom:50px;">Professional Experience</h1>
+
+    <div class="company-card">
+        <h2>🔹 Business Management Web Application</h2>
+        <p><strong>Position:</strong> Python & Django Developer</p>
+        <p><strong>Company:</strong> Confidential IT Firm</p>
+        <p><strong>Status:</strong> Currently Working</p>
+
+        <p>
+            Currently developing and maintaining a real-time business management web application
+            for client management, employee tracking, reporting systems, and task workflows.
+        </p>
+
+        <ul>
+            <li>✔ Developing backend modules using Django</li>
+            <li>✔ Designing and optimizing PostgreSQL database</li>
+            <li>✔ Building admin dashboards & reports</li>
+            <li>✔ Implementing authentication and role-based access</li>
+            <li>✔ Coordinating with frontend team for UI integration</li>
+        </ul>
+
+        <p style="margin-top:15px;"><strong>Tech Stack:</strong> Python, Django, PostgreSQL, HTML, CSS, Bootstrap, JavaScript</p>
+    </div>
+</section>
+
+<footer class="footer">
+    <h2>Dhiraj Pal</h2>
+    <p>Python & Django Developer</p>
+    <div class="socials">
+        <a href="https://www.linkedin.com/in/dhiraj-pal-344789370">LinkedIn</a>
+        <a href="https://github.com/Dhiru9136">GitHub</a>
+    </div>
+    <p>© 2026 All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
