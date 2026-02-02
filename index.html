@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dhiraj | Python Developer</title>
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin:0; padding:0; box-sizing:border-box; }
 
         body {
             background: linear-gradient(135deg, #000007, #0a0a2a);
@@ -25,13 +23,19 @@
             padding: 0 60px;
             height: 90px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            position: fixed;       /* make navbar fixed */
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;         /* ensure navbar is on top */
         }
 
-        .left {
+        .left a {
             font-size: 2rem;
             font-weight: bold;
             letter-spacing: 2px;
             color: #29f3b6;
+            text-decoration: none;
         }
 
         nav ul {
@@ -42,14 +46,21 @@
         nav ul li {
             list-style: none;
             margin-left: 35px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: 0.3s ease;
         }
 
-        nav ul li:hover {
-            color: #29f3b6;
-            transform: translateY(-2px);
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover { color:#29f3b6; }
+
+        /* ---------- HAMBURGER ---------- */
+        .hamburger {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
         }
 
         /* ---------- HERO SECTION ---------- */
@@ -57,9 +68,9 @@
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            padding: 80px 10%;
+            padding: 180px 10% 80px 10%; /* top padding to avoid overlap with fixed navbar */
             min-height: 80vh;
-            position: relative; /* important */
+            position: relative;
         }
 
         .leftSection {
@@ -74,12 +85,8 @@
             color: #ccc;
         }
 
-        .purple {
-            color: #29f3b6;
-            font-weight: bold;
-        }
+        .purple { color: #29f3b6; font-weight: bold; }
 
-        /* ---------- PROFILE IMAGE TOP RIGHT ---------- */
         .rightSection {
             position: absolute;
             top: 120px;
@@ -93,15 +100,52 @@
             object-fit: cover;
             border: 5px solid #29f3b6;
             box-shadow: 0 0 25px rgba(41, 243, 182, 0.5);
-            transition: 0.4s ease;
         }
 
-        .profile-img:hover {
-            transform: scale(1.05);
+        /* ---------- FOOTER ---------- */
+        .footer {
+            background-color: #101036;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+            border-top: 2px solid #29f3b6;
         }
+
+        .footer h2 { color:#29f3b6; }
+        .footer p { color:#ccc; margin:8px 0; }
+
+        .socials a {
+            color:white;
+            margin:0 12px;
+            text-decoration:none;
+        }
+
+        .socials a:hover { color:#29f3b6; }
+
+        .copyright { font-size:0.9rem; color:#888; }
 
         /* ---------- RESPONSIVE ---------- */
         @media (max-width: 900px) {
+            nav { padding:0 20px; }
+
+            nav ul {
+                position: absolute;
+                top: 90px;
+                right: 0;
+                background: #101036;
+                width: 100%;
+                flex-direction: column;
+                display: none;
+                text-align: center;
+                z-index: 999; /* ensure dropdown is above content */
+            }
+
+            nav ul.show { display:flex; }
+
+            nav ul li { margin: 20px 0; }
+
+            .hamburger { display:block; }
+
             .firstSection {
                 flex-direction: column;
                 text-align: center;
@@ -111,104 +155,56 @@
                 position: static;
                 margin-top: 40px;
             }
-
-            nav {
-                padding: 0 20px;
-            }
-
-            nav ul li {
-                margin-left: 20px;
-            }
         }
-        /* ---------- FOOTER ---------- */
-.footer {
-    background-color: #101036;
-    padding: 40px 20px;
-    text-align: center;
-    margin-top: 60px;
-    border-top: 2px solid #29f3b6;
-}
-
-.footer h2 {
-    color: #29f3b6;
-    margin-bottom: 10px;
-}
-
-.footer p {
-    color: #ccc;
-    margin: 8px 0;
-}
-
-.socials {
-    margin: 15px 0;
-}
-
-.socials a {
-    color: white;
-    margin: 0 12px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.socials a:hover {
-    color: #29f3b6;
-}
-
-copyright {
-    font-size: 0.9rem;
-    color: #888;
-}
-
-
     </style>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="left"><a href="index.html" style="color:#29f3b6;">DHIRAJ</a></div>
-            <div class="right">
-                <ul>
-                    
-                    <li style="color:#29f3b6;">Home</a></li>
-                    <li><a href="about.html" style="color:#29f3b6;">About</a></li>
-                    <li><a href="project.html" style="color:#29f3b6;">Project</a></li>
-                    <li><a href="contact.html" style="color:#29f3b6;">Contact Me</a></li>
-                    <li><a href="image/CV _DHIRAJ PAL .pdf" download style="color:#29f3b6;">Download CV</a></li>
-                   
-                </ul>
-            </div>
-        </nav>
-    </header>
 
-    <main>
-        <section class="firstSection">
-            <div class="leftSection">
-                Hi, I'm <span class="purple">Dhiraj Pal</span>
-                <div>Python & Django Developer | Web Developer</div>
-            </div>
+<header>
+    <nav>
+        <div class="left"><a href="index.html">DHIRAJ</a></div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <ul id="navLinks">
+            <li><a href="index.html" style="color:#29f3b6;">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="project.html">Project</a></li>
+            <li><a href="contact.html">Contact Me</a></li>
+            <li><a href="image/CV _DHIRAJ PAL .pdf" download>Download CV</a></li>
+        </ul>
+    </nav>
+</header>
 
-            <div class="rightSection">
-                <img src="image/Dhiraj.png" alt="Dhiraj" class="profile-img">
-            </div>
-        </section>
-    </main>
+<main>
+    <section class="firstSection">
+        <div class="leftSection">
+            Hi, I'm <span class="purple">Dhiraj Pal</span>
+            <div>Python & Django Developer | Web Developer</div>
+        </div>
 
-    <footer class="footer">
-    <div class="footer-container">
-        <h2>Dhiraj Pal</h2>
-        <p>Python & Django Developer | Web Developer</p>
+        <div class="rightSection">
+            <img src="image/Dhiraj.png" alt="Dhiraj" class="profile-img">
+        </div>
+    </section>
+</main>
 
-        <div class="socials">
-        <a href="https://www.linkedin.com/in/dhiraj-pal-344789370?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a>
-        <a href="https://github.com/Dhiru9136">GitHub</a>
-      
+<footer class="footer">
+    <h2>Dhiraj Pal</h2>
+    <p>Python & Django Developer | Web Developer</p>
+
+    <div class="socials">
+        <a href="https://www.linkedin.com/">LinkedIn</a>
+        <a href="https://github.com/">GitHub</a>
     </div>
 
-        <p class="copyright">
-            © 2026 Dhiraj Pal. All Rights Reserved.
-        </p>
-    </div>
+    <p class="copyright">© 2026 Dhiraj Pal. All Rights Reserved.</p>
 </footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+}
+</script>
+
 </body>
 </html>
