@@ -1,0 +1,513 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Explore Dhiraj Pal's Python and Django projects, including web applications, task management, and portfolio development.">
+    <meta name="author" content="Dhiraj Pal">
+
+    <title>Projects | Dhiraj Pal</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(135deg, #000007, #0a0a2a);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #101036;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 60px;
+            min-height: 90px;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .left a {
+            color: #29f3b6;
+            text-decoration: none;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links li {
+            list-style: none;
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #29f3b6;
+        }
+
+        .nav-links a:focus-visible,
+        .hamburger:focus-visible {
+            outline: 2px solid #29f3b6;
+            outline-offset: 5px;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            color: #29f3b6;
+            user-select: none;
+            background: transparent;
+            border: none;
+        }
+
+        /* PROJECTS */
+        .projects {
+            padding: 80px 10%;
+        }
+
+        .projects h1 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.8rem;
+            color: #29f3b6;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: #12124a;
+            padding: 25px;
+            border: 1px solid rgba(41, 243, 182, 0.15);
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(41, 243, 182, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 25px rgba(41, 243, 182, 0.4);
+        }
+
+        .project-card h2 {
+            color: #29f3b6;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .project-card p {
+            color: #ccc;
+            font-size: 0.95rem;
+            margin-bottom: 22px;
+            flex-grow: 1;
+        }
+
+        .project-card a {
+            display: inline-block;
+            align-self: flex-start;
+            text-decoration: none;
+            background: #29f3b6;
+            color: #000;
+            padding: 9px 16px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .project-card a:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        /* PROFESSIONAL EXPERIENCE */
+        .company-section {
+            padding: 80px 10%;
+            background: #0a0a2a;
+        }
+
+        .company-section > h1 {
+            text-align: center;
+            color: #29f3b6;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+        }
+
+        .company-card {
+            background: #11113a;
+            padding: 40px;
+            border: 1px solid rgba(41, 243, 182, 0.15);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(41, 243, 182, 0.2);
+        }
+
+        .company-card h2 {
+            color: #29f3b6;
+            margin-bottom: 15px;
+            font-size: 1.7rem;
+        }
+
+        .company-card p {
+            color: #ddd;
+            margin-bottom: 15px;
+        }
+
+        .company-card ul {
+            margin: 15px 0;
+            padding-left: 25px;
+            color: #ccc;
+        }
+
+        .company-card li {
+            margin-bottom: 8px;
+        }
+
+        .company-card .tech-stack {
+            margin-top: 20px;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #101036;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 2px solid #29f3b6;
+        }
+
+        .footer h2 {
+            color: #29f3b6;
+            margin-bottom: 8px;
+        }
+
+        .footer p {
+            color: #ccc;
+            margin: 8px 0;
+        }
+
+        .socials {
+            margin: 20px 0;
+        }
+
+        .socials a {
+            color: white;
+            margin: 0 12px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .socials a:hover {
+            color: #29f3b6;
+        }
+
+        /* TABLET */
+        @media (max-width: 900px) {
+            nav {
+                padding: 0 25px;
+            }
+
+            .nav-links li {
+                margin-left: 18px;
+            }
+
+            .projects,
+            .company-section {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            nav {
+                min-height: 75px;
+            }
+
+            .left a {
+                font-size: 1.7rem;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background: #101036;
+                flex-direction: column;
+                text-align: center;
+                display: none;
+                padding: 15px 0 25px;
+                border-top: 1px solid #29f3b6;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 12px 0;
+            }
+
+            .projects {
+                padding: 55px 6%;
+            }
+
+            .projects h1,
+            .company-section > h1 {
+                font-size: 2.1rem;
+                margin-bottom: 35px;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .company-section {
+                padding: 55px 6%;
+            }
+
+            .company-card {
+                padding: 25px;
+            }
+
+            .company-card h2 {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .project-card {
+                padding: 20px;
+            }
+
+            .socials a {
+                margin: 0 7px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav aria-label="Main navigation">
+        <div class="left">
+            <a href="index.html">DHIRAJ</a>
+        </div>
+
+        <button
+            class="hamburger"
+            id="hamburger"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-controls="navLinks"
+            aria-expanded="false">
+            ☰
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="project.html" class="active" aria-current="page">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <a href="image/Dhiraj_Pal_CV.pdf" download>
+                    Download CV
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- PROJECTS -->
+        <section class="projects" aria-labelledby="projects-heading">
+            <h1 id="projects-heading">My Projects</h1>
+
+            <div class="project-grid">
+
+                <article class="project-card">
+                    <h2>Shopping Web App</h2>
+                    <p>
+                        Django-based e-commerce website with user authentication,
+                        product listings, shopping cart, orders and admin panel.
+                    </p>
+                    <a
+                        href="https://github.com/Dhiru9136/Shoppingapp"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        View Project
+                    </a>
+                </article>
+
+                <article class="project-card">
+                    <h2>To-Do List App</h2>
+                    <p>
+                        Task management application built using Python and Django,
+                        supporting task creation, updates, deletion and CRUD operations.
+                    </p>
+                    <a
+                        href="https://github.com/Dhiru9136/Todo_app_Django"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        View Project
+                    </a>
+                </article>
+
+                <article class="project-card">
+                    <h2>Portfolio Website</h2>
+                    <p>
+                        Responsive developer portfolio showcasing my projects,
+                        technical skills and professional experience.
+                    </p>
+                    <a
+                        href="https://dhiru9136.github.io/Portfolio/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        View Project
+                    </a>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- PROFESSIONAL EXPERIENCE -->
+        <section class="company-section" aria-labelledby="experience-heading">
+            <h1 id="experience-heading">Professional Experience</h1>
+
+            <article class="company-card">
+                <h2>SCADA-Based Water Monitoring &amp; Control System</h2>
+
+                <p><strong>Role:</strong> Python Developer</p>
+
+                <p>
+                    Worked on a water distribution management system for
+                    Non-Revenue Water (NRW) monitoring using Python and Django.
+                    The platform supports water distribution data, dashboards
+                    and role-based access.
+                </p>
+
+                <ul>
+                    <li>Backend development using Django</li>
+                    <li>REST API development and integration</li>
+                    <li>PostgreSQL database operations</li>
+                    <li>Role-based access control</li>
+                    <li>Interactive dashboards and data visualization</li>
+                    <li>Water distribution monitoring features</li>
+                </ul>
+
+                <p class="tech-stack">
+                    <strong>Tech Stack:</strong>
+                    Python, Django, Django REST Framework, PostgreSQL,
+                    HTML, CSS, Bootstrap and JavaScript
+                </p>
+            </article>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <h2>Dhiraj Pal</h2>
+        <p>Python &amp; Django Developer</p>
+
+        <div class="socials">
+            <a
+                href="https://www.linkedin.com/in/dhiraj-pal-344789370"
+                target="_blank"
+                rel="noopener noreferrer">
+                LinkedIn
+            </a>
+
+            <a
+                href="https://github.com/Dhiru9136"
+                target="_blank"
+                rel="noopener noreferrer">
+                GitHub
+            </a>
+
+            <a href="mailto:palmdhiraj91@gmail.com">Email</a>
+        </div>
+
+        <p>&copy; 2026 Dhiraj Pal. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("navLinks");
+
+        function closeMenu() {
+            navLinks.classList.remove("show");
+            hamburger.setAttribute("aria-expanded", "false");
+            hamburger.setAttribute("aria-label", "Open navigation menu");
+        }
+
+        hamburger.addEventListener("click", function () {
+            const isOpen = navLinks.classList.toggle("show");
+
+            hamburger.setAttribute("aria-expanded", String(isOpen));
+            hamburger.setAttribute(
+                "aria-label",
+                isOpen ? "Close navigation menu" : "Open navigation menu"
+            );
+        });
+
+        navLinks.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", closeMenu);
+        });
+
+        window.addEventListener("resize", function () {
+            if (window.innerWidth > 768) {
+                closeMenu();
+            }
+        });
+    </script>
+
+</body>
+</html>

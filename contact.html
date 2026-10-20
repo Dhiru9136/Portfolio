@@ -1,0 +1,443 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Dhiraj Pal, Python and Django Developer.">
+
+    <title>Contact | Dhiraj Pal</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #000007, #0a0a2a);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #101036;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 60px;
+            height: 90px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, .4);
+            position: relative;
+            z-index: 1000;
+        }
+
+        .left a {
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #29f3b6;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links li {
+            list-style: none;
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            transition: .3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #29f3b6;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            color: #29f3b6;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* CONTACT SECTION */
+        .contact-section {
+            padding-top: 55px;
+            padding-bottom: 30px;
+        }
+
+        .contact-heading {
+            color: #29f3b6;
+        }
+
+        .contact-subtitle {
+            color: #ccc;
+        }
+
+        .contact-box {
+            background: #11113a;
+            padding: 40px;
+            border: 1px solid rgba(41, 243, 182, .15);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(41, 243, 182, .2);
+        }
+
+        .form-label {
+            color: #fff;
+        }
+
+        .form-control {
+            background: #1c1c4d;
+            border: 1px solid #34345e;
+            color: white;
+            padding: 12px;
+        }
+
+        .form-control::placeholder {
+            color: #aaa;
+        }
+
+        .form-control:focus {
+            background: #1c1c4d;
+            color: white;
+            border-color: #29f3b6;
+            box-shadow: 0 0 10px rgba(41, 243, 182, .35);
+        }
+
+        .btn-custom {
+            background: #29f3b6;
+            color: #000;
+            font-weight: bold;
+            padding: 12px;
+            border: none;
+            transition: .3s;
+        }
+
+        .btn-custom:hover {
+            background: #1ad19b;
+            color: #000;
+        }
+
+        .contact-details {
+            color: #ddd;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-details a {
+            color: #29f3b6;
+            text-decoration: none;
+        }
+
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-box hr {
+            border-color: #777;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #101036;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 40px;
+            border-top: 2px solid #29f3b6;
+        }
+
+        .footer h2 {
+            color: #29f3b6;
+        }
+
+        .footer p {
+            color: #ccc;
+            margin: 8px 0;
+        }
+
+        .socials {
+            margin: 18px 0;
+        }
+
+        .socials a {
+            color: white;
+            margin: 0 12px;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .socials a:hover {
+            color: #29f3b6;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            nav {
+                padding: 0 25px;
+            }
+
+            .nav-links li {
+                margin-left: 18px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 20px;
+                height: 75px;
+            }
+
+            .left a {
+                font-size: 1.7rem;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background: #101036;
+                flex-direction: column;
+                text-align: center;
+                display: none;
+                padding: 15px 0 25px;
+                border-top: 1px solid #29f3b6;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 13px 0;
+            }
+
+            .contact-section {
+                padding-top: 35px;
+            }
+
+            .contact-box {
+                padding: 25px 20px;
+            }
+
+            .footer {
+                margin-top: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="left">
+        <a href="index.html">DHIRAJ</a>
+    </div>
+
+    <div
+        class="hamburger"
+        id="hamburger"
+        role="button"
+        tabindex="0"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+    >☰</div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="project.html">Projects</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li>
+            <a href="image/Dhiraj_Pal_CV.pdf" download>
+                Download CV
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<!-- CONTACT SECTION -->
+<section class="container contact-section">
+
+    <div class="text-center mb-4">
+        <h1 class="fw-bold contact-heading">Contact Me</h1>
+        <p class="contact-subtitle">
+            Let's build something amazing together!
+        </p>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10 contact-box">
+
+            <form id="contactForm">
+
+                <div class="mb-3">
+                    <label for="fullName" class="form-label">Full Name</label>
+                    <input
+                        type="text"
+                        id="fullName"
+                        name="name"
+                        class="form-control"
+                        placeholder="Enter your full name"
+                        autocomplete="name"
+                        maxlength="100"
+                        required
+                    >
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="form-control"
+                        placeholder="Enter your email address"
+                        autocomplete="email"
+                        maxlength="254"
+                        required
+                    >
+                </div>
+
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        class="form-control"
+                        rows="5"
+                        placeholder="Write your message here..."
+                        maxlength="5000"
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-custom w-100">
+                    Send Message
+                </button>
+
+                <p id="formStatus" class="mt-3 mb-0" role="status"></p>
+            </form>
+
+            <hr class="my-4">
+
+            <div class="contact-details">
+                <p>
+                    <strong>Email:</strong>
+                    <a href="mailto:palmdhiraj91@gmail.com">
+                        palmdhiraj91@gmail.com
+                    </a>
+                </p>
+
+                <p><strong>Location:</strong> Mumbai, India</p>
+
+                <p>
+                    <strong>Role:</strong>
+                    Python &amp; Django Developer | Web Developer
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <h2>Dhiraj Pal</h2>
+
+    <p>Python &amp; Django Developer | Building Web Applications</p>
+
+    <div class="socials">
+        <a
+            href="https://www.linkedin.com/in/dhiraj-pal-344789370"
+            target="_blank"
+            rel="noopener noreferrer"
+        >LinkedIn</a>
+
+        <a
+            href="https://github.com/Dhiru9136"
+            target="_blank"
+            rel="noopener noreferrer"
+        >GitHub</a>
+
+        <a href="mailto:palmdhiraj91@gmail.com">Email</a>
+    </div>
+
+    <p>© 2026 Dhiraj Pal | All Rights Reserved</p>
+</footer>
+
+<script>
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("navLinks");
+
+    function toggleMenu() {
+        const isOpen = navLinks.classList.toggle("show");
+        hamburger.setAttribute("aria-expanded", String(isOpen));
+    }
+
+    hamburger.addEventListener("click", toggleMenu);
+
+    hamburger.addEventListener("keydown", function(event) {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            toggleMenu();
+        }
+    });
+
+    navLinks.querySelectorAll("a").forEach(function(link) {
+        link.addEventListener("click", function() {
+            navLinks.classList.remove("show");
+            hamburger.setAttribute("aria-expanded", "false");
+        });
+    });
+
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("fullName").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+        const status = document.getElementById("formStatus");
+
+        if (!name || !email || !message) {
+            status.style.color = "#ff8080";
+            status.textContent = "Please fill in all fields.";
+            return;
+        }
+
+        const subject = encodeURIComponent("Portfolio Contact - " + name);
+        const body = encodeURIComponent(
+            "Name: " + name + "\n" +
+            "Email: " + email + "\n\n" +
+            "Message:\n" + message
+        );
+
+        status.style.color = "#29f3b6";
+        status.textContent = "Opening your email application...";
+
+        window.location.href =
+            "mailto:palmdhiraj91@gmail.com?subject=" +
+            subject + "&body=" + body;
+    });
+</script>
+
+</body>
+</html>
