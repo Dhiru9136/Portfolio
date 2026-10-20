@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Dhiraj Pal</title>
+  <meta name="description" content="Contact Dhiraj Pal, Python and Django Developer.">
+  <meta name="author" content="Dhiraj Pal">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Dhiraj Pal</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="skills.html">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="projects.html">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="contact.html">Contact</a>
+        </li>
+        <li class="nav-item ms-lg-3">
+          <a class="btn btn-warning btn-sm fw-semibold px-3"
+             href="resume/Dhiraj_Pal_CV.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section class="contact-section">
+    <div class="container">
+
+        <!-- Heading -->
+        <div class="text-center mb-5">
+            <h2 class="section-title">Contact Me</h2>
+            <p class="section-subtitle">
+                Have a project or job opportunity in mind?
+                Feel free to get in touch.
+            </p>
+        </div>
+
+        <div class="row justify-content-center g-4">
+
+            <!-- Contact Form -->
+            <div class="col-lg-7 col-md-10">
+
+                <div class="contact-card">
+                    <h4 class="card-title">Send Me a Message</h4>
+
+                    <div id="formStatus" role="status" aria-live="polite"></div>
+
+                    <form id="contactForm">
+                        
+
+                        <div class="mb-3">
+                            <label for="name" class="form-label">
+                                Full Name
+                            </label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="name"
+                                name="name"
+                                placeholder="Enter your full name"
+                                maxlength="100"
+                                autocomplete="name"
+                                required
+                            >
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">
+                                Email Address
+                            </label>
+                            <input
+                                type="email"
+                                class="form-control"
+                                id="email"
+                                name="email"
+                                placeholder="your.email@example.com"
+                                maxlength="254"
+                                autocomplete="email"
+                                required
+                            >
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">
+                                Subject
+                            </label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="subject"
+                                name="subject"
+                                placeholder="Enter the subject"
+                                maxlength="150"
+                                required
+                            >
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="message" class="form-label">
+                                Message
+                            </label>
+                            <textarea
+                                class="form-control"
+                                id="message"
+                                name="message"
+                                rows="5"
+                                placeholder="Write your message here..."
+                                maxlength="5000"
+                                required
+                            ></textarea>
+                        </div>
+
+                        <button type="submit"
+                                class="btn btn-contact w-100">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="col-lg-4 col-md-10">
+
+                <div class="contact-card contact-info">
+                    <h4 class="card-title">Get in Touch</h4>
+
+                    <p class="info-description">
+                        I'm open to discussing Python backend development
+                        opportunities, web applications, and professional
+                        collaborations.
+                    </p>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="bi bi-envelope-fill"></i>
+                        </div>
+                        <div>
+                            <h6>Email</h6>
+                            <a href="mailto:palmdhiraj91@gmail.com">
+                                palmdhiraj91@gmail.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="bi bi-telephone-fill"></i>
+                        </div>
+                        <div>
+                            <h6>Phone</h6>
+                            <a href="tel:+919136325619">
+                                +91 91363 25619
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                        <div>
+                            <h6>Location</h6>
+                            <p>Mumbai, Maharashtra, India</p>
+                        </div>
+                    </div>
+
+                    <hr class="contact-divider">
+
+                    <h6 class="social-title">Connect With Me</h6>
+
+                    <div class="social-links">
+                        <a href="https://github.com/Dhiru9136"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="GitHub">
+                            <i class="bi bi-github"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/dhiraj-pal-344789370"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+
+                        <a href="mailto:palmdhiraj91@gmail.com"
+                           aria-label="Email">
+                            <i class="bi bi-envelope-fill"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+<footer class="site-footer text-light pt-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-5">
+        <h4 class="fw-bold">Dhiraj Pal</h4>
+        <p class="mt-3">
+          Web Developer | Python &amp; Django Developer <br>
+          Building responsive, scalable, and real-world web applications.
+        </p>
+        <div class="d-flex gap-3 fs-5 mt-3">
+          <a href="https://github.com/Dhiru9136" class="text-light" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
+          <a href="https://www.linkedin.com/in/dhiraj-pal-344789370" class="text-light" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="mailto:palmdhiraj91@gmail.com" class="text-light" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
+        </div>
+        <button type="button" id="backToTop" class="btn btn-outline-light mt-4">&uarr; Back to Top</button>
+      </div>
+
+      <div class="col-md-3">
+        <h6 class="fw-bold">Quick Links</h6>
+        <ul class="list-unstyled mt-3">
+          <li><a href="about.html" class="text-light text-decoration-none">About Me</a></li>
+          <li><a href="skills.html" class="text-light text-decoration-none">Skills</a></li>
+          <li><a href="projects.html" class="text-light text-decoration-none">Projects</a></li>
+          <li><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-3">
+        <h6 class="fw-bold">Contact</h6>
+        <ul class="list-unstyled mt-3">
+          <li>Email: palmdhiraj91@gmail.com</li>
+          <li>Phone: +91 91363 25619</li>
+          <li>Mumbai, India</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-strip text-center py-2 mt-4">
+    <small class="text-dark">&copy; 2026 Dhiraj Pal | Built with HTML, CSS, JavaScript &amp; Bootstrap</small>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

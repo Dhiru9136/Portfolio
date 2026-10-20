@@ -1,0 +1,25 @@
+/* Global styles shared by every page */
+html { scroll-behavior: smooth; }
+
+body {
+    background: #0d1117;
+    color: #e6edf3;
+    padding-top: 56px; /* space for the fixed navbar */
+}
+
+.navbar .nav-link.active { color: #00ffe1; }
+.navbar .nav-link:hover  { color: #00ffe1; }
+
+.site-footer {
+    background: linear-gradient(135deg, #0d1b2a, #1b263b);
+}
+
+.footer-strip { background: #e0a800; }
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
