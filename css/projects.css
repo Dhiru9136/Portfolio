@@ -1,0 +1,115 @@
+.projects-section {
+    background: #0d1117;
+    min-height: 100vh;
+    padding: 80px 0;
+    color: #e6edf3;
+}
+
+.section-title {
+    color: #00ffe1;
+    font-weight: 700;
+    font-size: 2.4rem;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    color: #9da7b3;
+    font-size: 1rem;
+}
+
+.project-card {
+    background: #161b22;
+    color: #e6edf3;
+    border: 1px solid #30363d;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+    border-color: #00ffe1;
+    box-shadow: 0 0 22px rgba(0, 255, 225, 0.15);
+}
+
+.project-card .card-body {
+    padding: 25px;
+}
+
+.project-type {
+    display: inline-block;
+    align-self: flex-start;
+    color: #00ffe1;
+    border: 1px solid #00ffe1;
+    border-radius: 20px;
+    padding: 5px 11px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 17px;
+}
+
+.project-card h4 {
+    color: #00ffe1;
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    color: #c9d1d9;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 12px;
+    margin-bottom: 18px;
+}
+
+.tech-stack span {
+    display: inline-block;
+    background: #0d1117;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    border-radius: 20px;
+    padding: 6px 10px;
+    font-size: 12px;
+    transition: all 0.2s ease;
+}
+
+.tech-stack span:hover {
+    color: #00ffe1;
+    border-color: #00ffe1;
+}
+
+.project-label {
+    display: inline-block;
+    color: #9da7b3;
+    font-size: 12px;
+    border-top: 1px solid #30363d;
+    padding-top: 12px;
+    width: 100%;
+}
+
+.project-btn {
+    border-radius: 25px;
+    padding: 9px 18px;
+}
+
+@media (max-width: 768px) {
+    .projects-section {
+        padding: 55px 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .project-card .card-body {
+        padding: 20px;
+    }
+}
